@@ -9,7 +9,7 @@ var builder = WebApplication.CreateBuilder(args);
 /*Singleton Pattern Implementation In the whole application*/
 builder.Services.AddSingleton<DapperContext>();
 
-/*Injection the Interface for Querying Database from Controller*/
+/*Injecting the Interface for Querying Database from Controller*/
 builder.Services.AddScoped<ICompanyRepository, CompanyRepository>();
 
 
