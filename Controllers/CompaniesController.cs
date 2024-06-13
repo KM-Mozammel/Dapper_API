@@ -11,7 +11,7 @@ namespace API.Controllers
         /*
          * Getting data from Interface->Implemented Class
          * And Getting by Constructor */
-
+        // Maybe it Repository Patter.
         private readonly ICompanyRepository _companyRepo;
         public CompaniesController(ICompanyRepository companyRepo) => _companyRepo = companyRepo;
 
@@ -22,7 +22,7 @@ namespace API.Controllers
 
             return Ok(companies);
         }
-
+        
         [HttpGet("{id}", Name = "CompanyById")]
         public async Task<IActionResult> GetCompanie(int id)
         {
