@@ -1,6 +1,7 @@
 using API.Context;
 using API.Contracts;
 using API.Repository;
+
 var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 /*Singleton Pattern Implementation In the whole application*/
@@ -9,7 +10,6 @@ builder.Services.AddSingleton<DapperContext>();
 builder.Services.AddScoped<ICompanyRepository, CompanyRepository>();
 
 // Adding Cors and Configuring for Localhost:3000
-
 builder.Services.AddCors(options =>
     {
         options.AddPolicy("AllowSpecificOrigin",
@@ -22,11 +22,10 @@ builder.Services.AddCors(options =>
     });
 
 builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-var app = builder.Build();
 
+var app = builder.Build();
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
