@@ -1,2 +1,2 @@
 ASP.NET CORE API using Micro ORM Dapper.
-50% of work done
+Get, GetById, Post, Put, Delete Section Completed.
